@@ -1,0 +1,24 @@
+{
+  "name": "shopmax-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "backendAPI-shopMax",
+    "frontEnd-shopMax",
+    "frontEnd-adminPanel"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "dev:api": "npm run dev --workspace backendAPI-shopMax",
+    "dev:shop": "npm run dev --workspace frontEnd-shopMax",
+    "dev:admin": "npm run dev --workspace frontEnd-adminPanel",
+    "test:e2e:browser": "playwright test",
+    "test:all": "npm run test --workspaces --if-present",
+    "lint:all": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "eslint": "10.5.0",
+    "globals": "17.6.0"
+  }
+}
